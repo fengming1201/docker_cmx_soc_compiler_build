@@ -1,0 +1,18 @@
+ARM官方下载链接 
+https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads
+
+step1:下载二进制包 或 源码包
+例如
+wget -c wget  https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+
+step2:解压、环境变量添加路径
+解压到/opt/
+tar -jxf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 -C /opt
+
+step3:添加环境变量
+export PATH=$PATH:/opt/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/bin
+
+或者在Dockerfile中添加
+ADD gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 /opt
+ENV PATH=$PATH:/opt/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/bin
+
